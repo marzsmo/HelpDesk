@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/ms-sql-serwer-1/databases/myHelpDeskDatabase",
+      "type": "mssql.azure",
+      "connectionId": "HelpDeskContext",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
