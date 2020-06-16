@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using HelpDesk.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace HelpDesk
 {
     public class Startup
@@ -24,6 +27,8 @@ namespace HelpDesk
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<HelpDeskContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("HelpDeskContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
